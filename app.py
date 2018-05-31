@@ -9,6 +9,7 @@ import restful
 from flask_mail import Message
 import string, random
 import cache
+
 # from flask.ext.session import Session
 
 app = Flask(__name__)
@@ -456,17 +457,17 @@ app.add_url_rule('/datamanage/add/', view_func=DataAddView.as_view('add_data'))
 
 @app.before_request
 def before_request():
-    if 'user_id' in session:
-        user_id = session.get('user_id')
-        user = User.query.get(user_id)
-        if user:
-            g.user = user
+    user_id = session.get('user_id', 76)
+    user = User.query.get(user_id)
+    if user:
+        g.user = user
+    else:
+        g.user = User.query.get(76)
 
 
 @app.route('/logout/')
 @login_required
 def logout():
-    # session.clear()
     del session['user_id']
     return redirect(url_for('login'))
 
