@@ -171,9 +171,8 @@ class LoginView(views.MethodView):
                 session['user_id'] = user.id
 
                 if remember:
-                    # 如果设置sesion.premanent = True
-                    # 过期时间为30天
                     session.permanent = True
+                    app.permanent_session_lifetime = timedelta(minutes=3600)
                 return redirect(url_for('index'))
             else:
                 return self.get(message='邮箱或密码错误')
