@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block title %}
+修改学校数据
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/adddata.css') }}">
+    <script src="{{ url_for('static',filename='js/datamanage.js') }}"></script>
+
+{% endblock %}
+
+{% block page_title %}
+{{ self.title() }}
+{% endblock %}
+
+{% block main_content %}
+<form action="" method="POST">
+    <div style="width: 500px">
+        <table class="table">
+            <tr>
+                <td>学校名称</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入学校" name="schoolName">
+                </td>
+            </tr>
+            <tr>
+                <td>年份</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入年份" name="year">
+                </td>
+            </tr>
+            <tr>
+                <td>学校地区</td>
+                <td>
+
+                    <input type="text" class="form-control form-size"  placeholder="请输入省份" name="province">
+                    省
+
+                    <input type="text" class="form-control form-size" placeholder="请输入城市" name="city">
+
+                市
+
+                    <input type="text" class="form-control form-size" placeholder="请输入城市" name="county">
+                    区县</td>
+            </tr>
+            <tr>
+                <td>在校学生总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入学生总数" name="sumStu">
+                </td>
+            </tr>
+            <tr>
+                <td>学校年度信息化投入(万元)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="万元" name="schoolPut">
+                </td>
+            </tr>
+            <tr>
+                <td>学校所在区县年度生均经费(万元)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="万元" name="studentAvg">
+                </td>
+            </tr>
+            <tr>
+                <td>计算机配置总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="computerSum">
+                </td>
+            </tr>
+            <tr>
+                <td>多媒体教室总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="multiClass">
+                </td>
+            </tr>
+            <tr>
+                <td>通用教室与专用教室总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="classSum">
+                </td>
+            </tr>
+            <tr>
+                <td>学校网络出口总宽带速度(M)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如1024" name="broadband">
+                </td>
+            </tr>
+
+            <tr>
+                <td>教师备课教学效果指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="effectPrepare">
+                </td>
+            </tr>
+            <tr>
+                <td>教师备课教学针对性指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="pertinencePrepare">
+                </td>
+            </tr>
+
+            <tr>
+                <td>教师教学优化课堂指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="optimizeTeach">
+                </td>
+            </tr>
+            <tr>
+                <td>教师教学转变学习方式指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="turnoverTeach">
+                </td>
+            </tr>
+            <tr>
+                <td>课程管理指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="manageCourse">
+                </td>
+            </tr>
+            <tr>
+                <td>课程交流指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size " placeholder="例如0.5" name="communicateCourse">
+                </td>
+            </tr>
+
+        </table>
+
+
+        <div class="form-group">
+                <button class="btn btn-primary " id="submit-btn2" style="width: 100px">添加</button>
+                <button class="btn btn-primary " style="width: 100px" id="cancel-btn2">取消</button>
+    </div>
+
+        </div>
+    </form>
+{% endblock %}

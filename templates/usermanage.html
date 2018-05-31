@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}
+用户管理
+{% endblock %}
+
+
+{% block head %}
+    <script src="{{ url_for('static',filename='js/usermanage.js') }}"></script>
+
+    <style>
+        .top-box{
+            overflow: hidden;
+            background:#ecedf0;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block page_title %}
+{{ self.title() }}
+{% endblock %}
+
+{% block main_content %}
+
+
+    <div class="top-box">
+        <button class="btn btn-warning" style="float: right" id="add-btn">添加新用户</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                {% if user.user_role.id == 3 %}
+                <th>学校</th>
+                {% endif %}
+
+                {% if user.user_role.id == 4 %}
+                <th>区域</th>
+                {% endif %}
+
+
+                <th>分组</th>
+                <th>加入时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for child in children %}
+        <tr user-id="{{ child.id }}" >
+
+            <td>{{ child.username }}</td>
+            {% if user.user_role.id == 3 %}
+                <td>{{ child.school_name }}</td>
+            {% endif %}
+            {% if user.user_role.id == 4 %}
+                <td>{{ child.district_name }}</td>
+            {% endif %}
+            <td>{{ child.user_role.name }}</td>
+            <td>{{ child.join_time }}</td>
+            <td><button type="button"  class="btn btn-danger btn-xs delete-user-btn">移除</button></td>
+
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+
+
+{% endblock %}

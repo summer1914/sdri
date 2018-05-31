@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+学校指数
+{% endblock %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block page_title %}
+{{ self.title() }}
+{% endblock %}
+
+{% block main_content %}
+<table class="table table-bordered">
+        <thead>
+
+        <td>学校</td>
+        <td>年度</td>
+        <td>创建时间</td>
+        <td>操作</td>
+        </thead>
+        {% for data in datas %}
+        <tr data-id={{ data.id }} >
+
+            <td>{{ data.schoolName }}</td>
+            <td>{{ data.year }}</td>
+            <td>{{ data.create_time }}</td>
+            <td><button type="button" id="remove-btn{{ loop.index }}"  class="btn btn-success btn-xs">详情</button>
+
+
+        </tr>
+        {% endfor %}
+{% endblock %}

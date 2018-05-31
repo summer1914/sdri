@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}
+修改学校数据
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/adddata.css') }}">
+    <script src="{{ url_for('static',filename='js/datadetail.js') }}"></script>
+
+{% endblock %}
+
+{% block page_title %}
+{{ data.schoolName }}
+{% endblock %}
+
+{% block main_content %}
+<form action="" method="POST">
+    <div style="width: 500px">
+        <table class="table">
+            <tr>
+                <td>学校名称</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入学校" name="schoolName" value="{{data.schoolName }}" >
+                </td>
+            </tr>
+            <tr>
+                <td>年份</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入年份" name="year" value="{{ data.year }}">
+                </td>
+            </tr>
+            <tr>
+                <td>学校地区</td>
+                <td>
+
+                    <input type="text" class="form-control form-size"  placeholder="请输入省份" name="province" value="{{ data.schoolProvince }}">
+                    省
+
+                    <input type="text" class="form-control form-size" placeholder="请输入城市" name="city" value="{{ data.schoolCity }}">
+
+                市
+
+                    <input type="text" class="form-control form-size" placeholder="请输入城市" name="county" value="{{ data.schoolCounty }}">
+                    区县</td>
+            </tr>
+            <tr>
+                <td>在校学生总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入学生总数" name="sumStu" value="{{ data.schoolStu }}">
+                </td>
+            </tr>
+            <tr>
+                <td>学校年度信息化投入(万元)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="万元" name="schoolPut" value="{{data.schoolPut }}">
+                </td>
+            </tr>
+            <tr>
+                <td>学校所在区县年度生均经费(万元)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="万元" name="studentAvg" value="{{ data.studentAvg }}">
+                </td>
+            </tr>
+            <tr>
+                <td>计算机配置总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="computerSum" value="{{ data.computerSum }}">
+                </td>
+            </tr>
+            <tr>
+                <td>多媒体教室总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="multiClass" value="{{ data.multiClass }}">
+                </td>
+            </tr>
+            <tr>
+                <td>通用教室与专用教室总数</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="请输入" name="classSum" value="{{ data.classSum }}">
+                </td>
+            </tr>
+            <tr>
+                <td>学校网络出口总宽带速度(M)</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如1024" name="broadband" value="{{ data.broadband }}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>教师备课教学效果指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="effectPrepare" value="{{ data.effectPrepare }}">
+                </td>
+            </tr>
+            <tr>
+                <td>教师备课教学针对性指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="pertinencePrepare" value="{{ data.pertinencePrepare }}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>教师教学优化课堂指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="optimizeTeach" value="{{ data.optimizeTeach }}">
+                </td>
+            </tr>
+            <tr>
+                <td>教师教学转变学习方式指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="turnoverTeach" value="{{ data.turnoverTeach }}">
+                </td>
+            </tr>
+            <tr>
+                <td>课程管理指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size" placeholder="例如0.5" name="manageCourse" value="{{ data.manageCourse }}">
+                </td>
+            </tr>
+            <tr>
+                <td>课程交流指数值</td>
+                <td>
+                    <input type="text" class="form-control form-size " placeholder="例如0.5" name="communicateCourse" value="{{ data.communicateCourse }}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+            <div class="form-group">
+                <button class="btn btn-primary " id="submit-btn" style="width: 100px">保存</button>
+                <button class="btn btn-primary " style="width: 100px" id="cancel-btn">取消</button>
+            </div>
+                </td>
+            </tr>
+
+    </table>
+
+
+
+
+        </div>
+    </form>
+{% endblock %}
+
+
+
+
+

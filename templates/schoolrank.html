@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+学校排名
+{% endblock %}
+
+
+{% block head %}
+    <style>
+        .top-box{
+            overflow: hidden;
+            background:#ecedf0;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block page_title %}
+学校排名
+{% endblock %}
+
+{% block main_content %}
+    <div class="top-box">
+        <button class="btn btn-warning" style="float: right" id="add-btn">添加新用户</button>
+    </div>
+<table class="table table-bordered">
+        <thead>
+        <tr>
+        <th>排名</th>
+        <th>区域</th>
+        <th>学校</th>
+        <th>年度</th>
+        <th>就绪指数</th>
+        <th>详情</th>
+        </tr>
+        </thead>
+        {% for data in datas %}
+        <tr>
+            <td>{{ loop.index}}</td>
+            <td>{{ data.schoolCounty }}</td>
+            <td>{{ data.schoolName }}</td>
+            <td>{{ data.year }}</td>
+            <td>{{ data.final_index }}</td>
+            <td><button type="button" id="remove-btn{{ loop.index }}"  class="btn btn-default btn-xs">详情</button>
+
+
+        </tr>
+        {% endfor %}
+{% endblock %}
